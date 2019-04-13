@@ -3,52 +3,189 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static "css/newsroom.css" %}" >
-    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <title>NewsRoom</title>
 </head>
+<style>
+    body{
+    background-color:#f4feff;
+    }
+    .p{
+    background-color:#FFFFFF;
+    }
+    .headline {
+  font-family: "Times New Roman", Times, serif;
+}
+</style>
 <body>
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-  <!-- Image and text -->
-<nav class="navbar bg-dark navbar-dark">
-  <a class="navbar-brand" href="#">
-    <img src="{% static "images/logo1.jpg" %}" width="35" height="35" class="d-inline-block align-top" alt="">
-    NewsRoom
-  </a>
-</nav>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">People <span class="sr-only">(current)</span></a>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="newsroom.html">Newsroom</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Options<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">People</a></li>
+          <li> <a href="#" >Support</li>
+          <li><a href="#">About</a></li>
+        </ul>
       </li>
-
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Options
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">My Expense</a>
-          <a class="dropdown-item" href="templates/newsroom/feedback.html">Feedback</a>
-          <a class="dropdown-item" href="#">About</a>
-        </div>
-      </li>
+      <li><a href="weather.html">Weather</a></li>s
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="People" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="{% url 'accounts:signup'%}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href=" {% url 'accounts:login'%}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
   </div>
 </nav>
-{% block basic %}
-{% endblock %}
- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+{%block basic%}
+{%endblock%}
+<!-- Footer -->
+<footer class="page-footer font-small blue-grey lighten-5">
+
+    <div style="background-color: #21d192;">
+      <div class="container">
+
+        <!-- Grid row-->
+        <div class="row py-4 d-flex align-items-center">
+
+          <!-- Grid column -->
+          <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+            <h6 class="mb-0">Get connected with us on social networks!</h6>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+            <!-- Facebook -->
+            <a class="fb-ic">
+              <i class="fab fa-facebook-f white-text mr-4"> </i>
+            </a>
+            <!-- Twitter -->
+            <a class="tw-ic">
+              <i class="fab fa-twitter white-text mr-4"> </i>
+            </a>
+            <!-- Google +-->
+            <a class="gplus-ic">
+              <i class="fab fa-google-plus-g white-text mr-4"> </i>
+            </a>
+            <!--Linkedin -->
+            <a class="li-ic">
+              <i class="fab fa-linkedin-in white-text mr-4"> </i>
+            </a>
+            <!--Instagram-->
+            <a class="ins-ic">
+              <i class="fab fa-instagram white-text"> </i>
+            </a>
+
+          </div>
+          <!-- Grid column -->
+
+        </div>
+        <!-- Grid row-->
+
+      </div>
+    </div>
+
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left mt-5">
+
+      <!-- Grid row -->
+      <div class="row mt-3 dark-grey-text">
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+
+          <!-- Content -->
+          <h6 class="text-uppercase font-weight-bold">NewsRoom</h6>
+          <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit amet, consectetur
+            adipisicing elit.</p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+          <!-- Links -->
+          <h6 class="text-uppercase font-weight-bold">Products</h6>
+          <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>
+            <a class="dark-grey-text" href="#!">MDBootstrap</a>
+          </p>
+          <p>
+            <a class="dark-grey-text" href="#!">MDWordPress</a>
+          </p>
+          <p>
+            <a class="dark-grey-text" href="#!">BrandFlow</a>
+          </p>
+          <p>
+            <a class="dark-grey-text" href="#!">Bootstrap Angular</a>
+          </p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+          <!-- Links -->
+          <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+          <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>
+            <a class="dark-grey-text" href="#!">Your Account</a>
+          </p>
+          <p>
+            <a class="dark-grey-text" href="#!">Become an Affiliate</a>
+          </p>
+          <p>
+            <a class="dark-grey-text" href="#!">Shipping Rates</a>
+          </p>
+          <p>
+            <a class="dark-grey-text" href="#!">Help</a>
+          </p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+          <!-- Links -->
+          <h6 class="text-uppercase font-weight-bold">Contact</h6>
+          <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>
+            <i class="fas fa-home mr-3"></i> BTM 1st Stage,Bangalore-560076</p>
+          <p>
+            <i class="fas fa-envelope mr-3"></i> shreyansh.24gautam@gmail.com</p>
+          <p>
+            <i class="fas fa-phone mr-3"></i> +919481202247</p>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center text-black-50 py-3">© 2019 Copyright:
+      <a class="dark-grey-text" href="https://mdbootstrap.com/education/bootstrap/"> NewsRoom.com</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
 </body>
 </html>

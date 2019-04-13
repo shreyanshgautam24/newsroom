@@ -1,100 +1,26 @@
 {% extends 'newsroom/basic.html'%}
+
 {% block basic %}
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">India News</h1>
-    <p class="lead">Top stories from around the world.</p>
+  <h5 align="right">{{insert_date}}</h5>
+<h3 class="headline" style="text-align:center"><b>Top Headlines</b></h3>
+<hr>
+
+<div class="container">
+{% for News in News %}
+    <div class="p">
+<div class="card-deck">
+  <div class="card">
+    <img class="card-img-top" src="https://c.ndtvimg.com/2018-10/fupae7lc_chief-justice-ranjan-gogoi-pti_625x300_03_October_18.jpg" alt="Card image cap" height="100" width="100">
+    <div class="card-body">
+      <h5 class="card-title">{{News.head}}</h5>
+      <p class="card-text">{{News.snippet}}</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
   </div>
+    </div>
 </div>
-<h5>{{today}}</h5>
-<h3 class="headline">Top Headlines</h3>
-<div class="alert alert-success" role="alert">
-  Sports
+{% endfor %}
 </div>
-<div class="card-group">
-  <div class="card">
-    <img class="card-img-top" src="" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-</div>
-<div class="alert alert-success" role="alert">
-  Entertainment
-</div>
-<div class="card-group">
-  <div class="card">
-    <img class="card-img-top" src="" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-</div>
-<div class="alert alert-success" role="alert">
-  Science
-</div>
-<div class="card-group">
-  <div class="card">
-    <img class="card-img-top" src="" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-</div>
-{{news.as_p}}
+<h3 class="headline" style="text-align:center"><b>Sports</b></h3><hr>
 
 {% endblock %}

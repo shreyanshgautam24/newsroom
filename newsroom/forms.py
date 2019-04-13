@@ -1,11 +1,8 @@
-from django import forms
-class userid(forms.Form):
-     email=forms.CharField(max_length=100)
-     password=forms.CharField(min_length=8)
+from django.forms import ModelForm,TextInput
+from .models import City
 
-
-class FeedBackForm(forms.Form):
-     name=forms.CharField()
-     rollno=forms.IntegerField()
-     email=forms.EmailField()
-     feedback=forms.CharField(widget=forms.Textarea)
+class CityForm(ModelForm):
+    class Meta:
+        model=City
+        fields=['name']
+        widgets= {'name': TextInput(attrs={'class':'input','placeholder':'City Name'})}

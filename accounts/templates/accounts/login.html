@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+        background-color:#eaf2ff;
+        }
+    </style>
+</head>
+<body>
+ <h1 align="center">Registration Form</h1><hr>
+  <div class="container" align="center">
+    <form method="POST" class="Login" action="newsroom/newsroom.html">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="button" value="Login">
+
+    </form>
+  </div>
+
+
+</body>
+</html>
